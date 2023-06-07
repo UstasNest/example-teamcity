@@ -53,7 +53,7 @@ object Build : BuildType({
             conditions {
                 contains("teamcity.build.branch", "master")
             }
-            goals = "clean deploy"
+            goals = "clean compile install"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
             userSettingsSelection = "settings.xml"
         }
