@@ -38,7 +38,7 @@ project {
 object Build : BuildType({
     name = "Build"
 
-    artifactRules = "target => target"
+    artifactRules = "target/*.jar => target"
 
     vcs {
         root(DslContext.settingsRoot)
