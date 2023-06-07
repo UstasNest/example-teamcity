@@ -49,6 +49,8 @@ object Build : BuildType({
     steps {
         maven {
             name = "if master branch"
+            executionMode = BuildStep.ExecutionMode.ALWAYS
+
 
             conditions {
                 equals("teamcity.build.branch", "master")
@@ -59,6 +61,7 @@ object Build : BuildType({
         }
         maven {
             name = "if not master branch"
+            executionMode = BuildStep.ExecutionMode.ALWAYS
 
             conditions {
                 doesNotEqual("teamcity.build.branch", "master")
