@@ -36,13 +36,14 @@ object Build : BuildType({
     name = "Build"
 
     enablePersonalBuilds = false
-    type = BuildTypeSettings.Type.DEPLOYMENT
+    type = BuildTypeSettings.Type.COMPOSITE
     maxRunningBuilds = 1
 
     vcs {
         root(DslContext.settingsRoot)
 
         cleanCheckout = true
+        showDependenciesChanges = true
     }
 
     steps {
