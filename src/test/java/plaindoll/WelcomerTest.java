@@ -34,6 +34,5 @@ public class WelcomerTest {
         public void welcomerSaysSentenceWithHunter(){
                 assertThat(welcomer.sayHunter(), containsString("hunter"));
         }
-
 }
 
