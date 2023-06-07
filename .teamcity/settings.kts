@@ -38,10 +38,7 @@ project {
 object Build : BuildType({
     name = "Build"
 
-    artifactRules = """
-        *.jar => target
-        target => target
-    """.trimIndent()
+    artifactRules = "*.jar => target"
 
     vcs {
         root(DslContext.settingsRoot)
