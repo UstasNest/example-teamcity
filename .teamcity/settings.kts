@@ -57,7 +57,6 @@ object Build : BuildType({
             name = "if not master branch"
 
             conditions {
-                contains("teamcity.build.branch", "master")
                 doesNotContain("teamcity.build.branch", "master")
             }
             goals = "clean deploy"
