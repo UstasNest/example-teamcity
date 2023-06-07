@@ -51,7 +51,7 @@ object Build : BuildType({
             name = "if master branch"
 
             conditions {
-                contains("teamcity.build.branch", "master")
+                equals("teamcity.build.branch", "master")
             }
             goals = "clean deploy"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
@@ -61,7 +61,7 @@ object Build : BuildType({
             name = "if not master branch"
 
             conditions {
-                doesNotContain("teamcity.build.branch", "master")
+                doesNotEqual("teamcity.build.branch", "master")
             }
             goals = "clean test"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
